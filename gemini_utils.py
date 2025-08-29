@@ -5,21 +5,16 @@ from typing import List, Dict, Any
 import google.generativeai as genai
 from dotenv import load_dotenv
 
-# Load .env file if running locally
+# Load local .env file
 load_dotenv()
 
-# Priority: Streamlit Cloud secrets > Local .env
-_API_KEY = None
-try:
-    import streamlit as st
-    _API_KEY = st.secrets.get("GOOGLE_API_KEY") or os.getenv("GOOGLE_API_KEY")
-except Exception:
-    _API_KEY = os.getenv("GOOGLE_API_KEY")
+# Get API key only from environment (.env)
+_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 if not _API_KEY:
     raise RuntimeError(
         "❌ GOOGLE_API_KEY not found. "
-        "Set it in a local .env file OR in Streamlit Cloud → Secrets."
+        "Set it in your local .env file. On Streamlit Cloud, use 'Secrets' settings."
     )
 
 # Configure Gemini client
