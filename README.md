@@ -1,41 +1,56 @@
-📄 Snowwlder — AI-Powered Resume Assistant
+❄️ Snowwlder
+AI-Powered Resume Assistant
 
-“Your AI career coach that matches resumes with job descriptions in seconds.”
+“Stop guessing. Start matching. Let AI tell you how well your resume fits the job.”
 
-Snowwlder is a Streamlit app powered by Google Gemini that helps job seekers analyze their resumes, get AI-driven feedback, and calculate resume–JD match scores using semantic embeddings.
+Snowwlder is an AI-driven resume analyzer that helps you land jobs faster. It compares your resume with a job description, scores the match, highlights missing skills, and gives you actionable AI feedback — all in one click.
+
+🚀 Why Snowwlder?
+
+🔍 Tired of resume black holes? Recruiters use Applicant Tracking Systems (ATS) that scan for keywords. Snowwlder acts like your AI recruiter — boosting your chances by showing:
+
+✅ How well your resume matches the JD
+
+📊 Which skills/keywords you already have
+
+❌ Which important ones are missing
+
+💡 Smart AI tips to improve your resume
 
 ✨ Features
 
-📂 Upload Resume (PDF only)
+📂 Upload Resume (PDF)
 
 📝 Paste Job Description
 
-🤖 AI-Powered Feedback — strengths, gaps, missing keywords, improvements
+📊 ATS Match Score (semantic + keyword-based)
 
-📊 Match Score — semantic similarity (embeddings + keywords)
+🔑 Keyword Insights (found & missing skills)
 
-🌐 Deployed on Streamlit Cloud — runs in your browser, no installs needed
+🤖 Gemini AI Feedback (summary, strengths, gaps, improvements)
 
-🖼️ Demo Screenshot
+🌐 Deployable on Streamlit Cloud
+
+🖼️ Sneak Peek
 
 ⚙️ Tech Stack
+Layer	Tech
+Frontend	Streamlit
+AI Engine	Google Gemini API
+Text Extraction	pypdf
+Similarity	Embeddings + Cosine Similarity
+Keyword Insights	Custom NLP Matching
+Config	dotenv / TOML secrets
+📂 Project Structure
+Snowwlder/
+├── app.py               # 🎨 Streamlit UI
+├── gemini_utils.py      # 🤖 Gemini API helpers
+├── resume_utils.py      # 📂 Resume PDF utils
+├── semantic_matcher.py  # 📊 Scoring engine
+├── requirements.txt     # 📦 Dependencies
+└── .env.example         # 🔑 API key template
 
-Streamlit
- — UI framework
-
-Google Gemini API
- — embeddings + LLM feedback
-
-pypdf
- — PDF text extraction
-
-NumPy
- — cosine similarity
-
-Python-dotenv
- — local secret management
-
-🚀 Getting Started
+⚡ Quickstart
 1️⃣ Clone repo
 git clone https://github.com/SUYASH2004/Snowwlder.git
 cd Snowwlder
@@ -43,14 +58,14 @@ cd Snowwlder
 2️⃣ Install dependencies
 pip install -r requirements.txt
 
-3️⃣ Add your API key
+3️⃣ Set API Key
 
 Create a .env file:
 
 GOOGLE_API_KEY="your_api_key_here"
 
 
-Or in Streamlit Cloud, go to Settings → Secrets and paste:
+Or on Streamlit Cloud → Settings → Secrets:
 
 GOOGLE_API_KEY = "your_api_key_here"
 
@@ -59,47 +74,48 @@ streamlit run app.py
 
 🧠 How It Works
 
-Extract Resume → PDF text extracted via pypdf.
+Extract Resume (PDF) → Extracts clean text from resume.
 
-Embed & Compare → Both resume & JD embedded using Gemini’s text-embedding-004.
+Semantic Match → Embeds resume & JD with Gemini embeddings.
 
-Cosine Similarity → Computes semantic similarity.
+Cosine Similarity → Calculates how close they are in meaning.
 
-Keyword Overlap → Finds top skills/keywords matched vs missing.
+Keyword Insights → Finds top keywords found & missing.
 
-LLM Feedback → Gemini gives structured feedback (summary, strengths, gaps, improvements).
+Gemini Feedback → AI provides structured review:
 
-📂 Project Structure
-/Snowwlder
-├── app.py               # Streamlit app
-├── gemini_utils.py      # Gemini API helpers
-├── resume_utils.py      # Resume text extraction + preprocessing
-├── semantic_matcher.py  # Similarity + keyword scoring
-├── requirements.txt     # Dependencies
-└── .env.example         # Template env file (no secrets)
+Summary
+
+Strengths
+
+Gaps
+
+Missing Keywords
+
+Improvements
 
 🌟 Example Output
 
-Match Score: 0.78 / 1.0
+Match Score: 0.82 / 1.0 ✅
 Keywords Found: Python, Machine Learning, SQL
-Missing Keywords: Kubernetes, Cloud, CI/CD
+Missing Keywords: Cloud, Kubernetes, CI/CD
 
 AI Feedback:
 
-Strengths: Strong data analysis background, clear project impact
+Strengths: Strong ML background, solid Python skills
 
-Gaps: Limited cloud experience
+Gaps: Cloud technologies not highlighted
 
-Improvements: Add measurable outcomes for each project
+Improvements: Add metrics for project outcomes, emphasize teamwork
 
-🧑‍💻 Author
+👨‍💻 Author
 
 Suyash Rane
 
-💼 LinkedIn :- https://www.linkedin.com/in/suyash-rane-4aaa84258/
+💼 LinkedIn
 
-📧 ranesuyash2004@gmail.com
+🐙 GitHub
 
-🌟 Always building AI + Web apps
+✉️ your.email@example.com
 
-⚡ Snowwlder is your personal AI recruiter — making resumes shine, one match at a time.
+⚡ Snowwlder: Turning resumes into job-winning tools.
