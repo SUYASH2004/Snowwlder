@@ -1,0 +1,5 @@
+streamlit>=1.36
+google-generativeai>=0.8.0,<1.0.0
+python-dotenv>=1.0
+pypdf>=4.2
+numpy>=1.26
