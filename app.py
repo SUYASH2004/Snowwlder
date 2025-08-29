@@ -67,10 +67,12 @@ if analyze:
     resume_text = extract_text_from_pdf(uploaded)
     resume_text = normalize_text(resume_text)
 
-    # Compute similarity score
-    match_score, keywords_found, keywords_missing = compute_match(
-        resume_text, jd_text
-    )
+    # Compute similarity score (dict-based return)
+    match_result = compute_match(resume_text, jd_text)
+
+    match_score = match_result["final_score"]
+    keywords_found = match_result["matched_keywords"]
+    keywords_missing = match_result["missing_keywords"]
 
     # Get AI-powered feedback
     feedback = llm_feedback(resume_text, jd_text)
